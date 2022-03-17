@@ -1,0 +1,41 @@
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.topMenu a {
+  margin: 0 10px;
+}
+
+.logo {
+    height: 62px;
+    display: flex;
+    align-items: center;
+}
+
+.section {
+  padding: 16px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  padding: 0 41px;
+}
+
+.separation {
+  height: 1px;
+  background-color: #e7e7e7;
+  border: none;
+}
+
+.navigation {
+  width: 100%;
+  text-align: center;
+  padding: 16px 0;
+}
+
+.navigation a {
+  margin: 0 8px;
+}

@@ -1,0 +1,11 @@
+.primary {
+    background: #F02F23;
+    color: #fff;
+    border-radius: 14px;
+    padding: 4px 16px;
+    line-height: 20px;
+}
+
+.primary:hover {
+    color: #fff;
+}
