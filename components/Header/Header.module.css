@@ -39,3 +39,14 @@
 .navigation a {
   margin: 0 8px;
 }
+
+@media (max-width: 600px) {
+  .section {
+    padding: 0;
+  }
+
+  .navigation {
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}
