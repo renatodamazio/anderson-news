@@ -16,6 +16,7 @@ export default function Home() {
   const [destak, setDestak] = useState([]);
   const [ready, setReady] = useState(false);
   const [totalDisplayNews, setTotalDisplayNews] = useState(10);
+  const [destakTitle, setDestakTitle] = useState("Breaking News");
   const router = useRouter();
 
   const getHeadlines = (category) => {
@@ -30,6 +31,9 @@ export default function Home() {
         setArticles(data.articles);
 
         setReady(true);
+
+        const title = category ? `Latest ${category} news` : "Breaking News";
+        setDestakTitle(title);
       })
       .catch((err) => console.error(err));
   };
@@ -57,7 +61,7 @@ export default function Home() {
               ready={ready}
               className={styles.placeholder}
             >
-              <Destak {...destak} />
+              <Destak {...destak} title={destakTitle} />
             </ReactPlaceholder>
           </article>
         </section>
@@ -72,7 +76,11 @@ export default function Home() {
                   ready={ready}
                   className={styles.placeholder}
                 >
-                  <Link href={article.url} target="_blank" rel="noreferrer noopener">
+                  <Link
+                    href={article.url}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                  >
                     <Cards
                       variant={index % 2 != 0 ? "reverse" : ""}
                       {...article}

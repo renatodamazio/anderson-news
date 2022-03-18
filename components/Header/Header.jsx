@@ -56,15 +56,23 @@ export const Header = () => {
 
         <div className={style.topMenu}>
           <div className={style.topMenuItems}>
-            <Link href="/">Newsletter</Link>
+            <Link href="/" onClick={(e) => e.preventDefault()}>
+              Newsletter
+            </Link>
 
-            <Link href="/">Sign In</Link>
+            <Link href="/" onClick={(e) => e.preventDefault()}>
+              Sign In
+            </Link>
 
-            <Link href="/" className="primary">
+            <Link
+              href="/"
+              onClick={(e) => e.preventDefault()}
+              className="primary"
+            >
               Subscribe
             </Link>
           </div>
-          <Link href="/">
+          <Link href="" onClick={(e) => e.preventDefault()}>
             <Image
               src="./images/search.svg"
               alt="Search Icon"
