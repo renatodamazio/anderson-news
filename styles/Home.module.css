@@ -10,3 +10,9 @@
   max-width: 520px;
   margin: 0 auto;
 }
+
+.content {
+  width: 100%;
+  max-width: 540px;
+  margin: 0 auto;
+}

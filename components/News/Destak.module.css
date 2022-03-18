@@ -1,0 +1,41 @@
+.sectionTitle {
+  font-weight: 700;
+  font-size: 11px;
+  line-height: 18px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  display: inline-block;
+}
+
+.h3 {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 30px;
+  margin-bottom: 8px;
+}
+
+.h5 {
+  font-weight: 700;
+  color: #2a2a2a;
+  font-size: 11px;
+  line-height: 18px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  color: #f02f23;
+}
+
+.figure {
+  margin: 16px 0;
+}
+
+.timestamp {
+  color: #7c7c7c;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 18px;
+  opacity: 0.78;
+  margin: 8px 0;
+  display: inline-block;
+  width: 100%;
+}
