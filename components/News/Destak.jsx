@@ -1,29 +1,36 @@
 import React from "react";
 import Image from "../Image/Image";
 import style from "./News.module.css";
+import moment from "moment";
 
-export const Destak = () => {
+export const Destak = ({
+  title,
+  description,
+  url,
+  urlToImage,
+  author,
+  publishedAt,
+  source,
+}) => {
   return (
     <div className={style.wrapper}>
       <span className={style.sectionTitle}>Breaking News</span>
       <figure className={style.figure}>
         <Image
-          src="https://www.madrecor.com.br/wp-content/uploads/2016/10/orionthemes-placeholder-image.jpg"
+          src={urlToImage}
           width="100%"
           height="311px"
           alt="Image Destak"
         />
       </figure>
-      <h5 className={style.h5}>BBC News</h5>
+      <h5 className={style.h5}>{source.name}</h5>
       <h3 className={style.h3}>
-        Obama: Haitian migrants' plight is 'heartbreaking,' but Biden knows
-        system is broken
+        {title}
       </h3>
       <p className={style.paragraph}>
-        Some Democrats have criticized the Biden administration's handing of the
-        crisis.
+        {description}
       </p>
-      <span className={style.timestamp}>12 minutes ago</span>
+      <span className={style.timestamp}>{moment(publishedAt).startOf('hour').fromNow()}</span>
     </div>
   );
 };

@@ -9,11 +9,16 @@ import axios from "axios";
 
 export default function Home() {
   const [articles, setArticles] = useState([]);
+  const [destak, setDestak] = useState([]);
 
   useEffect(() => {
     axios
       .get("/api/search")
-      .then(({ data }) => setArticles(data.articles))
+      .then(({ data }) => {
+        const firstArticle = data.articles.shift();
+        setDestak(firstArticle);
+        setArticles(data.articles);
+      })
       .catch((err) => console.error(err));
   }, []);
 
@@ -28,7 +33,7 @@ export default function Home() {
       <main className={styles.main}>
         <section>
           <article className={styles.content}>
-            <Destak />
+            <Destak {...destak}/>
           </article>
         </section>
 
