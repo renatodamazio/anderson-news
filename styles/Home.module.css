@@ -23,6 +23,10 @@
   padding: 28px 0;
 }
 
+.placeholder {
+  margin: 20px 0;
+}
+
 @media (max-width: 600px) {
   .main {
     padding: 0 16px;

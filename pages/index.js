@@ -8,18 +8,26 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { useRouter } from "next/router";
 
+import ReactPlaceholder from "react-placeholder";
+import "react-placeholder/lib/reactPlaceholder.css";
+
 export default function Home() {
   const [articles, setArticles] = useState([]);
   const [destak, setDestak] = useState([]);
+  const [ready, setReady] = useState(false);
   const router = useRouter();
 
   const getHeadlines = (category) => {
+    setReady(false);
+
     axios
       .get(`/api/getHeadlines?category=${category}`)
       .then(({ data }) => {
         const firstArticle = data.articles.shift();
         setDestak(firstArticle);
         setArticles(data.articles);
+
+        setReady(true);
       })
       .catch((err) => console.error(err));
   };
@@ -41,14 +49,28 @@ export default function Home() {
       <main className={styles.main}>
         <section>
           <article className={styles.content}>
-            <Destak {...destak} />
+            <ReactPlaceholder
+              type="media"
+              rows={4}
+              ready={ready}
+              className={styles.placeholder}
+            >
+              <Destak {...destak} />
+            </ReactPlaceholder>
           </article>
         </section>
 
         <section>
           {articles.map((article, index) => (
             <article key={index} className={styles.content}>
-              <Cards variant={index % 2 != 0 ? "reverse" : ""} {...article} />
+              <ReactPlaceholder
+                type="media"
+                rows={3}
+                ready={ready}
+                className={styles.placeholder}
+              >
+                <Cards variant={index % 2 != 0 ? "reverse" : ""} {...article} />
+              </ReactPlaceholder>
             </article>
           ))}
         </section>
