@@ -1,11 +1,10 @@
 import React from "react";
-import style from "./Destak.module.css";
 import Image from "../Image/Image";
-import newsStyle from "./News.module.css";
+import style from "./News.module.css";
 
 export const Destak = () => {
   return (
-    <>
+    <div className={style.wrapper}>
       <span className={style.sectionTitle}>Breaking News</span>
       <figure className={style.figure}>
         <Image
@@ -20,12 +19,12 @@ export const Destak = () => {
         Obama: Haitian migrants' plight is 'heartbreaking,' but Biden knows
         system is broken
       </h3>
-      <p className={newsStyle.paragraph}>
+      <p className={style.paragraph}>
         Some Democrats have criticized the Biden administration's handing of the
         crisis.
       </p>
       <span className={style.timestamp}>12 minutes ago</span>
-    </>
+    </div>
   );
 };
 

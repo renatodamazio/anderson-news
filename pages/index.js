@@ -2,6 +2,7 @@ import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import Header from "../components/Header/Header";
 import Destak from "../components/News/Destak";
+import Cards from "../components/News/Cards";
 export default function Home() {
   return (
     <>
@@ -19,7 +20,12 @@ export default function Home() {
         </section>
 
         <section>
-          
+          <article className={styles.content}>
+            <Cards />
+          </article>
+          <article className={styles.content}>
+            <Cards variant="reverse" />
+          </article>
         </section>
       </main>
     </>

@@ -1,0 +1,27 @@
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+    border-bottom: 1px solid #E7E7E7;
+}
+
+.wrapper h3 {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 22px;
+}
+
+.highlight {
+    padding-right: 40px;
+}
+
+.wrapper[variant="reverse"] {
+    flex-direction: row-reverse;
+}
+
+.wrapper[variant="reverse"] .highlight {
+    padding-right: 0;
+    padding-left: 40px;
+}
