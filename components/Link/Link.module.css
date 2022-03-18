@@ -1,9 +1,20 @@
-.primary {
+.primary, .secondary {
     background: #F02F23;
     color: #fff;
     border-radius: 14px;
     padding: 4px 16px;
     line-height: 20px;
+}
+
+.secondary {
+    background: transparent;
+    border: 1px solid #F02F23;
+    color: #F02F23;
+}
+
+.secondary:hover {
+    background: #F02F23;
+    color: #fff;
 }
 
 .primary:hover {

@@ -3,6 +3,8 @@ import styles from "../styles/Home.module.css";
 import Header from "../components/Header/Header";
 import Destak from "../components/News/Destak";
 import Cards from "../components/News/Cards";
+import Link from "../components/Link/Link";
+
 export default function Home() {
   return (
     <>
@@ -26,6 +28,12 @@ export default function Home() {
           <article className={styles.content}>
             <Cards variant="reverse" />
           </article>
+        </section>
+
+        <section className={styles.loadMoreSection}>
+          <Link href="/" className="secondary">
+            Load more
+          </Link>
         </section>
       </main>
     </>
