@@ -6,21 +6,29 @@ import Cards from "../components/News/Cards";
 import Link from "../components/Link/Link";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { useRouter } from "next/router";
 
 export default function Home() {
   const [articles, setArticles] = useState([]);
   const [destak, setDestak] = useState([]);
+  const router = useRouter();
 
-  useEffect(() => {
+  const getHeadlines = (category) => {
     axios
-      .get("/api/search")
+      .get(`/api/getHeadlines?category=${category}`)
       .then(({ data }) => {
         const firstArticle = data.articles.shift();
         setDestak(firstArticle);
         setArticles(data.articles);
       })
       .catch((err) => console.error(err));
-  }, []);
+  };
+
+  useEffect(() => {
+    const { category } = router.query;
+    const param = category;
+    getHeadlines(param);
+  }, [router]);
 
   return (
     <>
@@ -33,7 +41,7 @@ export default function Home() {
       <main className={styles.main}>
         <section>
           <article className={styles.content}>
-            <Destak {...destak}/>
+            <Destak {...destak} />
           </article>
         </section>
 

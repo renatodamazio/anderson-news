@@ -1,0 +1,16 @@
+import axios from "axios";
+
+export default async function getHeadLines(req, res) {
+  const { category } = req.query;
+  let paramCategory = "";
+
+  if (category !== "undefined") {
+    paramCategory = `&category=${category}`;
+  }
+
+  axios
+    .get(
+      `https://newsapi.org/v2/top-headlines?country=us${paramCategory}&apiKey=648aeed9c8a14834a065c3f2b3a0f55f`
+    )
+    .then((resp) => res.status(200).json(resp.data));
+}
