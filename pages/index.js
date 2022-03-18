@@ -12,9 +12,15 @@ export default function Home() {
       </Head>
       <Header />
       <main className={styles.main}>
-        <article className={styles.content}>
-          <Destak />
-        </article>
+        <section>
+          <article className={styles.content}>
+            <Destak />
+          </article>
+        </section>
+
+        <section>
+          
+        </section>
       </main>
     </>
   );

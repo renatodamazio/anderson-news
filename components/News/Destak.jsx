@@ -5,7 +5,7 @@ import newsStyle from "./News.module.css";
 
 export const Destak = () => {
   return (
-    <div>
+    <>
       <span className={style.sectionTitle}>Breaking News</span>
       <figure className={style.figure}>
         <Image
@@ -25,7 +25,7 @@ export const Destak = () => {
         crisis.
       </p>
       <span className={style.timestamp}>12 minutes ago</span>
-    </div>
+    </>
   );
 };
 
