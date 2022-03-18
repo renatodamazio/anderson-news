@@ -6,7 +6,6 @@ import moment from "moment";
 export const Destak = ({
   title,
   description,
-  url,
   urlToImage,
   publishedAt,
   source,
