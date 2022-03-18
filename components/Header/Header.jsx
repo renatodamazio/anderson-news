@@ -9,7 +9,6 @@ export const Header = () => {
   const router = useRouter();
   const [selectMenu, setSelectMenu] = useState("top-headlines");
   const [selectorPos, setSelectorPos] = useState(0);
-
   const refs = {
     topHeadlines: useRef(),
     business: useRef(),

@@ -36,10 +36,12 @@
   .wrapper,
   .wrapper[variant="reverse"] {
     flex-direction: column-reverse;
+    max-width: 100%;
   }
 
   .wrapper figure {
     margin-bottom: 12px;
+    width: 100%;
   }
 
   .wrapper figure span {
@@ -48,7 +50,8 @@
 
   .wrapper .highlight,
   .wrapper[variant="reverse"] .highlight {
-    padding-left: 0px;
+    margin-left: 0px;
+    max-width: 100%;
   }
 
   .wrapper img {
