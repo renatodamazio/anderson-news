@@ -21,7 +21,7 @@ export default function Home() {
   const getHeadlines = (category) => {
     setReady(false);
     setTotalDisplayNews(10);
-    
+
     axios
       .get(`/api/getHeadlines?category=${category}`)
       .then(({ data }) => {
@@ -72,10 +72,12 @@ export default function Home() {
                   ready={ready}
                   className={styles.placeholder}
                 >
-                  <Cards
-                    variant={index % 2 != 0 ? "reverse" : ""}
-                    {...article}
-                  />
+                  <Link href={article.url} target="_blank" rel="noreferrer noopener">
+                    <Cards
+                      variant={index % 2 != 0 ? "reverse" : ""}
+                      {...article}
+                    />
+                  </Link>
                 </ReactPlaceholder>
               </article>
             ) : (

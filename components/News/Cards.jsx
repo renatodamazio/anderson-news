@@ -25,11 +25,9 @@ export const Cards = ({
           {author} • {formatDateTime(publishedAt)}
         </span>
       </div>
-      <div>
-        <figure>
-          <Image src={urlToImage} width="260px" height="146px" alt={title} />
-        </figure>
-      </div>
+      <figure className={style.figureWrapper}>
+        <Image src={urlToImage} width="260px" height="146px" alt={title} />
+      </figure>
     </div>
   );
 };
