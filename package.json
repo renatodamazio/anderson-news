@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@souvik1991/react-lazy-load-image": "^1.0.5",
     "axios": "^0.26.1",
     "moment": "^2.29.1",
     "next": "12.1.0",

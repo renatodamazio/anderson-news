@@ -45,12 +45,14 @@ export const Header = () => {
         </div>
 
         <div className={style.logo}>
-          <Image
-            src="./images/logo.svg"
-            width="188px"
-            height="20.81px"
-            alt="Anderson News Logo"
-          />
+          <Link href="/">
+            <Image
+              src="./images/logo.svg"
+              width="188px"
+              height="20.81px"
+              alt="Anderson News Logo"
+            />
+          </Link>
         </div>
 
         <div className={style.topMenu}>
