@@ -7,8 +7,12 @@ export const Header = () => {
   return (
     <header className={style.header}>
       <section className={style.section}>
-        <div></div>
-        
+        <div>
+          <div className={style.mobileMenu}>
+            <span></span>
+          </div>
+        </div>
+
         <div className={style.logo}>
           <Image
             src="./images/logo.svg"
@@ -19,13 +23,15 @@ export const Header = () => {
         </div>
 
         <div className={style.topMenu}>
-          <Link href="/">Newsletter</Link>
+          <div className={style.topMenuItems}>
+            <Link href="/">Newsletter</Link>
 
-          <Link href="/">Sign In</Link>
+            <Link href="/">Sign In</Link>
 
-          <Link href="/" className="primary">
-            Subscribe
-          </Link>
+            <Link href="/" className="primary">
+              Subscribe
+            </Link>
+          </div>
           <Link href="/">
             <Image
               src="./images/search.svg"
@@ -36,17 +42,19 @@ export const Header = () => {
           </Link>
         </div>
       </section>
+
       <hr className={style.separation} />
+
       <section className={style.section}>
         <nav className={style.navigation}>
-            <Link href="/">Top Headlines</Link>
-            <Link href="/">Business</Link>
-            <Link href="/">Entertainment</Link>
-            <Link href="/">General</Link>
-            <Link href="/">Health</Link>
-            <Link href="/">Science</Link>
-            <Link href="/">Sports</Link>
-            <Link href="/">Technology</Link>
+          <Link href="/">Top Headlines</Link>
+          <Link href="/">Business</Link>
+          <Link href="/">Entertainment</Link>
+          <Link href="/">General</Link>
+          <Link href="/">Health</Link>
+          <Link href="/">Science</Link>
+          <Link href="/">Sports</Link>
+          <Link href="/">Technology</Link>
         </nav>
       </section>
     </header>

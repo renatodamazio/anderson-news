@@ -5,6 +5,10 @@
   flex-direction: column;
 }
 
+.topMenu {
+  display: flex;
+}
+
 .topMenu a {
   margin: 0 10px;
 }
@@ -40,6 +44,41 @@
   margin: 0 8px;
 }
 
+.mobileMenu {
+  display: flex;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  margin-left: 18px;
+}
+
+.mobileMenu span {
+  height: 2px;
+  width: 16px;
+  position: relative;
+  background: #2A2A2A;
+  border-radius: 1px;
+}
+
+.mobileMenu span:before,
+.mobileMenu span:after {
+  content: "";
+  background: #2A2A2A;
+  border-radius: 1px;
+  height: 2px;
+  position: absolute;
+}
+
+.mobileMenu span:before {
+  top: -6px;
+  width: 8px;
+}
+
+.mobileMenu span:after {
+  bottom: -6px;
+  width: 12px;
+}
+
 @media (max-width: 600px) {
   .section {
     padding: 0;
@@ -48,5 +87,10 @@
   .navigation {
     overflow-x: auto;
     white-space: nowrap;
+  }
+
+  .topMenuItems {
+    position: absolute;
+    left: -100%;
   }
 }
