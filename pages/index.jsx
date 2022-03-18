@@ -15,11 +15,13 @@ export default function Home() {
   const [articles, setArticles] = useState([]);
   const [destak, setDestak] = useState([]);
   const [ready, setReady] = useState(false);
+  const [totalDisplayNews, setTotalDisplayNews] = useState(10);
   const router = useRouter();
 
   const getHeadlines = (category) => {
     setReady(false);
-
+    setTotalDisplayNews(10);
+    
     axios
       .get(`/api/getHeadlines?category=${category}`)
       .then(({ data }) => {
@@ -61,24 +63,42 @@ export default function Home() {
         </section>
 
         <section>
-          {articles.map((article, index) => (
-            <article key={index} className={styles.content}>
-              <ReactPlaceholder
-                type="media"
-                rows={3}
-                ready={ready}
-                className={styles.placeholder}
-              >
-                <Cards variant={index % 2 != 0 ? "reverse" : ""} {...article} />
-              </ReactPlaceholder>
-            </article>
-          ))}
+          {articles.map((article, index) =>
+            index < totalDisplayNews ? (
+              <article key={index} className={styles.content}>
+                <ReactPlaceholder
+                  type="media"
+                  rows={3}
+                  ready={ready}
+                  className={styles.placeholder}
+                >
+                  <Cards
+                    variant={index % 2 != 0 ? "reverse" : ""}
+                    {...article}
+                  />
+                </ReactPlaceholder>
+              </article>
+            ) : (
+              ""
+            )
+          )}
         </section>
 
         <section className={styles.loadMoreSection}>
-          <Link href="/" className="secondary">
-            Load more
-          </Link>
+          {totalDisplayNews <= articles.length ? (
+            <Link
+              href=""
+              onClick={(e) => {
+                e.preventDefault();
+                setTotalDisplayNews((prev) => prev + 10);
+              }}
+              className="secondary"
+            >
+              Load more
+            </Link>
+          ) : (
+            ""
+          )}
         </section>
       </main>
     </>
