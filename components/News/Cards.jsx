@@ -27,7 +27,7 @@ export const Cards = ({
       </div>
       <div>
         <figure>
-          <Image src={urlToImage} width="260px" height="146px" alt="imagem" />
+          <Image src={urlToImage} width="260px" height="146px" alt={title} />
         </figure>
       </div>
     </div>

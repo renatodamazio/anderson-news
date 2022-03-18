@@ -20,10 +20,10 @@ export const Destak = ({
           src={urlToImage}
           width="100%"
           height="311px"
-          alt="Image Destak"
+          alt={title}
         />
       </figure>
-      <h5 className={style.h5}>{source.name}</h5>
+      <h5 className={style.h5}>{source?.name}</h5>
       <h3 className={style.h3}>
         {title}
       </h3>

@@ -47,14 +47,14 @@ export const Header = () => {
 
       <section className={style.section}>
         <nav className={style.navigation}>
-          <Link href="/">Top Headlines</Link>
-          <Link href="/">Business</Link>
-          <Link href="/">Entertainment</Link>
-          <Link href="/">General</Link>
-          <Link href="/">Health</Link>
-          <Link href="/">Science</Link>
-          <Link href="/">Sports</Link>
-          <Link href="/">Technology</Link>
+          <Link href="/top-headlines">Top Headlines</Link>
+          <Link href="/business">Business</Link>
+          <Link href="/entertainment">Entertainment</Link>
+          <Link href="/general">General</Link>
+          <Link href="/health">Health</Link>
+          <Link href="/science">Science</Link>
+          <Link href="/sports">Sports</Link>
+          <Link href="/tecnhology">Technology</Link>
         </nav>
       </section>
     </header>
