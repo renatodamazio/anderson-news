@@ -81,6 +81,7 @@
   width: 30px;
   height: 30px;
   margin-left: 18px;
+  display: none;
 }
 
 .mobileMenu span {
@@ -117,6 +118,10 @@
 
   .section {
     padding: 0;
+  }
+
+  .mobileMenu {
+    display: inline-flex;
   }
 
   .navigation {
