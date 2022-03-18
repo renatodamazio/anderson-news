@@ -79,71 +79,75 @@ export const Header = () => {
 
       <section className={style.section}>
         <nav className={style.navigation}>
-          <Link
-            refs={refs.topHeadlines}
-            href="/"
-            className={selectMenu === "topHeadlines" ? "active-category" : ""}
-          >
-            Top Headlines
-          </Link>
+          <div className={style.wrapper}>
+            <Link
+              refs={refs.topHeadlines}
+              href="/"
+              className={selectMenu === "topHeadlines" ? "active-category" : ""}
+            >
+              Top Headlines
+            </Link>
 
-          <Link
-            refs={refs.business}
-            href="?category=business"
-            className={selectMenu === "business" ? "active-category" : ""}
-          >
-            Business
-          </Link>
-          <Link
-            refs={refs.entertainment}
-            href="?category=entertainment"
-            className={selectMenu === "entertainment" ? "active-category" : ""}
-          >
-            Entertainment
-          </Link>
-          <Link
-            refs={refs.general}
-            href="?category=general"
-            className={selectMenu === "general" ? "active-category" : ""}
-          >
-            General
-          </Link>
-          <Link
-            refs={refs.health}
-            href="?category=health"
-            className={selectMenu === "health" ? "active-category" : ""}
-          >
-            Health
-          </Link>
-          <Link
-            refs={refs.science}
-            href="?category=science"
-            className={selectMenu === "science" ? "active-category" : ""}
-          >
-            Science
-          </Link>
-          <Link
-            refs={refs.sports}
-            href="?category=sports"
-            className={selectMenu === "sports" ? "active-category" : ""}
-          >
-            Sports
-          </Link>
-          <Link
-            refs={refs.technology}
-            href="?category=technology"
-            className={selectMenu === "technology" ? "active-category" : ""}
-          >
-            Technology
-          </Link>
+            <Link
+              refs={refs.business}
+              href="?category=business"
+              className={selectMenu === "business" ? "active-category" : ""}
+            >
+              Business
+            </Link>
+            <Link
+              refs={refs.entertainment}
+              href="?category=entertainment"
+              className={
+                selectMenu === "entertainment" ? "active-category" : ""
+              }
+            >
+              Entertainment
+            </Link>
+            <Link
+              refs={refs.general}
+              href="?category=general"
+              className={selectMenu === "general" ? "active-category" : ""}
+            >
+              General
+            </Link>
+            <Link
+              refs={refs.health}
+              href="?category=health"
+              className={selectMenu === "health" ? "active-category" : ""}
+            >
+              Health
+            </Link>
+            <Link
+              refs={refs.science}
+              href="?category=science"
+              className={selectMenu === "science" ? "active-category" : ""}
+            >
+              Science
+            </Link>
+            <Link
+              refs={refs.sports}
+              href="?category=sports"
+              className={selectMenu === "sports" ? "active-category" : ""}
+            >
+              Sports
+            </Link>
+            <Link
+              refs={refs.technology}
+              href="?category=technology"
+              className={selectMenu === "technology" ? "active-category" : ""}
+            >
+              Technology
+            </Link>
 
-          <span
-            style={{
-              left: `${selectorPos.x}px`,
-              width: `${selectorPos.width}px`,
-            }}
-            className={style.selector}
-          ></span>
+            <span
+              style={{
+                left: `${selectorPos.x}px`,
+                width: `${selectorPos.width}px`,
+              }}
+              className={style.selector}
+            ></span>
+          </div>
         </nav>
       </section>
     </header>
