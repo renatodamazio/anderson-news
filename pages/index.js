@@ -4,8 +4,19 @@ import Header from "../components/Header/Header";
 import Destak from "../components/News/Destak";
 import Cards from "../components/News/Cards";
 import Link from "../components/Link/Link";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 export default function Home() {
+  const [articles, setArticles] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("/api/search")
+      .then(({ data }) => setArticles(data.articles))
+      .catch((err) => console.error(err));
+  }, []);
+
   return (
     <>
       <Head>
@@ -22,12 +33,11 @@ export default function Home() {
         </section>
 
         <section>
-          <article className={styles.content}>
-            <Cards />
-          </article>
-          <article className={styles.content}>
-            <Cards variant="reverse" />
-          </article>
+          {articles.map((article, index) => (
+            <article key={index} className={styles.content}>
+              <Cards variant={index % 2 != 0 ? "reverse" : ""} {...article} />
+            </article>
+          ))}
         </section>
 
         <section className={styles.loadMoreSection}>

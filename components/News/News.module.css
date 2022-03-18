@@ -52,3 +52,9 @@
   line-height: 21px;
   color: #565656;
 }
+
+@media (max-width: 600px) {
+  .figure img {
+    height: 183px;
+  }
+}
