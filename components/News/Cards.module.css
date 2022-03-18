@@ -1,27 +1,48 @@
 .wrapper {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px 0;
-    border-bottom: 1px solid #E7E7E7;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+  border-bottom: 1px solid #e7e7e7;
 }
 
 .wrapper h3 {
-    font-size: 18px;
-    font-weight: 600;
-    line-height: 22px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 22px;
 }
 
 .highlight {
-    padding-right: 40px;
+  padding-right: 40px;
 }
 
 .wrapper[variant="reverse"] {
-    flex-direction: row-reverse;
+  flex-direction: row-reverse;
 }
 
 .wrapper[variant="reverse"] .highlight {
-    padding-right: 0;
-    padding-left: 40px;
+  padding-right: 0;
+  padding-left: 40px;
+}
+
+@media (max-width: 600px) {
+  .wrapper,
+  .wrapper[variant="reverse"] {
+    flex-direction: column-reverse;
+  }
+
+  .wrapper figure {
+    margin-bottom: 12px;
+  }
+
+  .wrapper .highlight,
+  .wrapper[variant="reverse"] .highlight {
+    padding-left: 0px;
+  }
+
+  .wrapper img {
+    width: 100%;
+    height: 100%;
+  }
 }
