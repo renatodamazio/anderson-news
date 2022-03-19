@@ -31,7 +31,7 @@ https://andersonpost.netlify.app/
 
 
 ## How To Install
-> npm run install
+> npm install
 
 > npm run dev
 
