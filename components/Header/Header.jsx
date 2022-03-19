@@ -36,6 +36,7 @@ export const Header = () => {
         setFixedMenu("fixed-menu");
       } else if (parent.scrollTop < 62 && fixedMenu != "") {
         setFixedMenu("");
+        console.log("entrei aqui.")
       }
     });
   };
