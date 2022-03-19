@@ -30,8 +30,8 @@ export const Header = () => {
   const handleScroll = () => {
     const parent = document.getElementById("__next");
 
-    parent.addEventListener("scroll", (event) => {
-      console.log(parent.scrollTop)
+    parent.addEventListener("scroll", () => {
+      console.log(parent.scrollTop);
       if (parent.scrollTop > 62 && fixedMenu == "") {
         setFixedMenu("fixed-menu");
       } else if (parent.scrollTop < 62 && fixedMenu != "") {
@@ -111,7 +111,8 @@ export const Header = () => {
       <hr className={style.separation} />
 
       <section className={style.section} variant={fixedMenu}>
-        <nav className={style.navigation}>
+        <nav className={style.navigation}> 
+        {fixedMenu}
           <div className={style.wrapper}>
             <Link
               refs={refs.topHeadlines}
