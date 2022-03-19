@@ -12,6 +12,12 @@
 
 5 LazyLoad
 
+## Pages:
+
+1 Home
+
+2 404
+
 **Desktop Vision:**
 ![1](https://user-images.githubusercontent.com/39681291/159098980-954f313b-0e75-49a4-b6db-908c3fd47e0b.png)
 
