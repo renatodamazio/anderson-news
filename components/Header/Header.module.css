@@ -3,6 +3,9 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
+  z-index: 999;
+  position: absolute;
+  background: #fff;
 }
 
 .topMenu {
@@ -41,6 +44,15 @@
   align-items: center;
   flex-direction: row;
   padding: 0 41px;
+  background: rgb(255 255 255 / 40%);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.section[variant="fixed-menu"] {
+  position: fixed;
+  width: 100%;
+  top: 0;
 }
 
 .separation {

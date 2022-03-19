@@ -2,6 +2,7 @@
   width: 100%;
   margin: 0 auto;
   margin-top: 16px;
+  padding-top: 117px;
 }
 
 .container {
@@ -30,6 +31,6 @@
 
 @media (max-width: 600px) {
   .main {
-    padding: 0px 16px;
+    padding: 117px 16px;
   }
 }

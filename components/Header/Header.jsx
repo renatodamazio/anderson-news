@@ -9,6 +9,8 @@ export const Header = () => {
   const router = useRouter();
   const [selectMenu, setSelectMenu] = useState("top-headlines");
   const [selectorPos, setSelectorPos] = useState(0);
+  const [fixedMenu, setFixedMenu] = useState("");
+
   const refs = {
     topHeadlines: useRef(),
     business: useRef(),
@@ -18,6 +20,17 @@ export const Header = () => {
     science: useRef(),
     sports: useRef(),
     technology: useRef(),
+  };
+
+  const handleScroll = () => {
+    const parent = document.getElementById("__next");
+    parent.addEventListener("scroll", (event) => {
+      if (parent.scrollTop > 62 && fixedMenu == "") {
+        setFixedMenu("fixed-menu");
+      } else if (parent.scrollTop < 62 && fixedMenu != "") {
+        setFixedMenu("");
+      }
+    });
   };
 
   useEffect(() => {
@@ -33,6 +46,8 @@ export const Header = () => {
       x: parseInt(pos?.offsetLeft),
       width: parseInt(pos?.offsetWidth),
     });
+
+    handleScroll();
   }, [router]);
 
   return (
@@ -86,7 +101,7 @@ export const Header = () => {
 
       <hr className={style.separation} />
 
-      <section className={style.section}>
+      <section className={style.section} variant={fixedMenu}>
         <nav className={style.navigation}>
           <div className={style.wrapper}>
             <Link
