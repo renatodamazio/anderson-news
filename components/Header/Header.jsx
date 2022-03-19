@@ -31,6 +31,7 @@ export const Header = () => {
     const parent = document.getElementById("__next");
 
     parent.addEventListener("scroll", (event) => {
+      console.log(parent.scrollTop)
       if (parent.scrollTop > 62 && fixedMenu == "") {
         setFixedMenu("fixed-menu");
       } else if (parent.scrollTop < 62 && fixedMenu != "") {
