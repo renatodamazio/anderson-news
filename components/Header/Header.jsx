@@ -22,8 +22,14 @@ export const Header = () => {
     technology: useRef(),
   };
 
+  const scrollToTop = () => {
+    const parent = document.getElementById("__next");
+    parent.scroll({ top: 0, behavior: "smooth" });
+  };
+
   const handleScroll = () => {
     const parent = document.getElementById("__next");
+
     parent.addEventListener("scroll", (event) => {
       if (parent.scrollTop > 62 && fixedMenu == "") {
         setFixedMenu("fixed-menu");
@@ -48,6 +54,8 @@ export const Header = () => {
     });
 
     handleScroll();
+
+    scrollToTop();
   }, [router]);
 
   return (
