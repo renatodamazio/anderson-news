@@ -31,12 +31,10 @@ export const Header = () => {
     const parent = document.getElementById("__next");
 
     parent.addEventListener("scroll", () => {
-      console.log(parent.scrollTop);
       if (parent.scrollTop > 62 && fixedMenu == "") {
         setFixedMenu("fixed-menu");
-      } else if (parent.scrollTop < 62 && fixedMenu != "") {
+      } else if (parent.scrollTop < 62 && fixedMenu == "") {
         setFixedMenu("");
-        console.log("entrei aqui.")
       }
     });
   };
@@ -112,8 +110,7 @@ export const Header = () => {
       <hr className={style.separation} />
 
       <section className={style.section} variant={fixedMenu}>
-        <nav className={style.navigation}> 
-        {fixedMenu}
+        <nav className={style.navigation}>
           <div className={style.wrapper}>
             <Link
               refs={refs.topHeadlines}
